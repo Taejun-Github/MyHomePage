@@ -3,13 +3,14 @@
     /* Color */
     --color-white: #ffffff;
     --color-light-white: #eeeeee;
-    --color-dark-pink: #fe918d;
+    --color-dark-pink: #e91710;
     --color-black: #000000;
     --color-dark-grey: #363434;
     --color-grey: #616161;
     --color-blue:#0968a7;
     --color-yellow: #feb546;
     --color-orange: #feb546;
+    --color-aqua: rgb(11, 158, 158);
 
     /* Font size */
     --font-large: 48px;
@@ -24,9 +25,92 @@
     --weight-regular: 400;
 
     /* Size */
+    --size-border-radius: 4px;
 }
 
 /* Universal tags */
 *{
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    cursor: default;
+    /*텍스트에 마우스 호버에도 마우스 모양이 변하지 않음*/
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* Typhgraphy */
+
+h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    color: var(--color-black);
+    margin: 16px 0px;
+}
+
+h2 {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-semi-bold);
+    color: var(--color-black);
+    margin: 8px 0;
+}
+
+h3 {
+    font-size: var(--font-regular);
+    font-weight: var(--font-regular);
+    color:var(--color-black);
+    margin: 8px 0;
+}
+
+p {
+    font-size: var(--font-regular);
+    font-weight: var(--font-regular);
+    color:var(--color-black);
+    margin: 4px 0;
+}
+
+/* Navbar */
+#navbar {
+    display: flex; /*수평으로 늘어서게 하기*/
+    justify-content: space-between; /*요소가 양끝으로 간다.*/
+    background-color: var(--color-blue);
+    align-items: center; /*수직으로 가운데 정렬. 클래스가 flex여야만 쓸 수 있다.*/
+    color: var(--color-white);
+    padding: 16px;
+}
+
+.navbar__menu {
+    display:flex; /*이렇게 하면 수평으로 늘어선 모양이 된다.*/
+}
+
+.navbar__logo {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+}
+
+.navbar__menu__item {
+    padding: 8px 12px;
+    margin: 0 4px; /*이렇게 하면 간격을 줄 수 있다.*/
+    cursor: pointer; /*마우스를 올리면 손가락 모양으로 바뀐다.*/
+    border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active {
+    border: 1px solid var(--color-white);
+}
+
+.navbar__menu__item:hover {
+    background-color: var(--color-aqua);
 }
