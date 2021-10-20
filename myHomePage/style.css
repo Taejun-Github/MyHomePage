@@ -295,3 +295,140 @@ p {
 .tools {
     background-color: gray;
 }
+
+/* Work */
+
+.work__categories {
+    margin: 40px;
+}
+
+.category__btn {
+    border: 1px solid rgb(80, 80, 60);
+    border-radius: var(--size-border-radius);
+    font-size:var(--font-regular);
+    padding: 8px 48px;
+}
+
+.category__btn.active, .category__btn:hover {
+    background-color: aquamarine;
+    color: white;
+}
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+    opacity: 1;
+    top: 0;
+    /*호버되거나 활성화될 때만 보이게 하고 위치를 top 0으로 한다.*/
+}
+.category__count {
+    background-color: orange;
+    border-radius: 50%;
+    color:var(--color-white);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    position: relative;
+    left: 15px;
+    top: -20px;
+    opacity: 0; /*평소에는 보이지 않게 함*/
+    transition: all var(--animation-duration);
+
+    /*이렇게 해야 원형이 된다. 그렇지 않으면 span이기 때문에 납작한 타원이 된다.*/
+    /*sapn은 컨텐트만 감싸는 사이즈로 정해지기 때문에 여백이 없다.*/
+    /*
+    display: inline ?
+    대표적인 태그로는 span을 예로 들 수 있는데, text 크기만큼만 공간을 점유하고 줄바꿈을 하지 않는다.
+
+    width/height 적용불가
+    margin/padding-top/bottom 적용불가
+    line-height를 원하는대로 사용할 수 없다.
+    display: block ?
+    block 속성은 무조건 한줄을 점유하고 있고, 다음 태그는 무조건 줄바꿈이 적용된다. 대표적인 태그는 div가 있다.
+
+    display: inline-block ?
+    inline-block 속성은 inline 속성의 특징과 block 속성의 특징 둘 다 가지고 있는 속성이다. 기본적인 특징은 inline 속성과 비슷한데 (줄바꿈을 하지 않고, 동일한 라인에 작성가능) inline속성에서 할 수 없었던 width/height 변경 및 line-height를 커스텀하게 적용할 수 있는 특징이 있다.
+
+    width/height 적용 가능
+    margin/padding-top/bottom 적용 가능
+    line-height 적용 가능
+    ** 고려사항
+
+    inline-block 사이에 공백이 생기게 되는데, parent 태그에 font-size: 0를 적용하면 해결된다.
+    inline-block 끼리 높이가 안맞을 때 상위 공백이 생기게 되는데 vertical-align: top을 적용하면 해결할 수 있다.
+    
+    */
+}
+
+.work__projects {
+    display:flex;
+    flex-wrap: wrap;
+    /*가로로 넘치면 밑으로 내려가도록 설정*/
+    justify-content: center;
+    /*요소들이 가운데로 정렬되도록 설정한다.*/
+}
+
+.project {
+    position:relative;
+    /*따라서 static을 쓰지 않도록 여기에 relative를 잡아주면
+    여기에서 project__description이 absolute의 포지션을 결정한다.*/
+    display:flex;
+    justify-content: center;
+    /*가운데로 맞추기*/
+    align-items: center;
+    /*높이를 중앙으로 맞추기*/
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: lightgray;
+
+}
+
+.project__img {
+    max-width: 100%;
+    max-height: 100%;
+    /*content 크기를 넘어가지 못하도록 설정한다.*/
+
+}
+
+.project__description {
+    position:absolute;
+    /*position static을 쓰지 않는 가장 가까운 부모태그를 찾아간다.*/
+    top:0;
+    left:0;
+    background-color: black;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /*이렇게 하면 flex가 세로 순서로 나온다.*/
+    justify-content: center;
+    /*이렇게 해서 중간으로 정렬한다.*/
+    opacity: 0;
+    transform: translateY(10px);
+    /*hover시 올라오는 효과를 주기 위해서*/
+    transition: all var(--animation-duration);
+}
+
+.project__description h3 {
+    color:var(--color-white);
+}
+
+.project:hover .project__description{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+/*project hover시 project__description의 opacity를 변화시킨다.*/
+
+.project__description h3:after {
+    content: '';
+    display:block;
+    position: relative;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    /*중간에서 조금 당겨오기*/
+    background-color: ivory;
+
+}
