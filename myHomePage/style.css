@@ -7,7 +7,7 @@
     --color-black: #000000;
     --color-dark-grey: #363434;
     --color-grey: #616161;
-    --color-blue:#0968a7;
+    --color-blue:#0bb8ec;
     --color-yellow: #feb546;
     --color-orange: #feb546;
     --color-aqua: rgb(11, 158, 158);
@@ -26,6 +26,9 @@
 
     /* Size */
     --size-border-radius: 4px;
+
+    /* Animation duration*/
+    --animation-duration: 800ms;
 }
 
 /* Universal tags */
@@ -50,6 +53,17 @@ ul {
     padding-left: 0;
 }
 
+li {
+    list-style:none;
+}
+
+button {
+    background-color: transparent;
+    /*투명하게*/
+    cursor:pointer;
+    border: none;
+    outline:none;
+}
 
 /* Typhgraphy */
 
@@ -114,3 +128,115 @@ p {
 .navbar__menu__item:hover {
     background-color: var(--color-aqua);
 }
+
+/* Home */
+#home {
+    background: url(imgs/water-gea0da4b9b_1920.jpg) center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+    /*이렇게 하면 이미지와 글자 모두를 가운데 정렬할 수 있다.*/
+}
+
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-white);
+}
+
+.home__title,
+.home__description {
+    color: purple;
+}
+
+.home__contact {
+    color: var(--color-orange);
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin:24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-orange);
+    border-radius: var(--size-border-radius);
+}
+
+/* Section common*/
+
+.section {
+    padding: 50px;
+    text-align: center;
+    max-width: 1200px;
+    /*섹션 부분의 최대 크기를 지정한다.*/
+    margin: auto;
+    /* 섹션 사항들의 마진이 양옆에 동등하게 배분되도록 한다.*/
+    
+}
+
+/* About */
+
+.about__majors {
+    display:flex;
+    justify-content: space-between;
+    margin: 80px 0;
+    
+}
+
+.major__icon {
+    width: 170px;
+    height: 170px;
+    font-size: 70px;
+    /*아이콘도 이렇게 폰트사이즈로 변경이 됨. 이미지가 아니기 때문이다.*/
+    line-height: 170px;
+    /*이렇게 height만큼 line-height를 지정하면 높이가 중간이 된다.*/
+    /*왜? line-height는 글자를 포함한 한 줄의 높이를 지정하는 것이므로.*/
+    margin:auto;
+    color:lightblue;
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.major__icon i {
+    transition: all var(--animation-duration) ease;
+}
+
+.major__icon:hover i{
+    color:var(--color-orange);
+    transform: rotate(-30deg) scale(1.1);
+}
+.major__title, .major__description {
+    color: var(--color-dark-grey);
+}
+
+.major__description {
+    font-size: var(--font-small);
+}
+
+.job {
+    display: flex;
+    align-items: center;
+    /*이렇게 해서 글자를 가운데로 정렬한다.*/
+}
+
+.job__description {
+    margin: 0 16px;
+    text-align: left;
+}
+
+.job img {
+    width: 100px;
+    height: 100px;
+    /*내 임의대로 넣은 것. 강의에는 없다.*/
+}
+
+.job__name, .job__period {
+    color:black;
+}
+
+.job__name {
+    font-size: var(--font-small);
+}
+
+.job__period {
+    font-size: var(--font-micro);
+}
+

@@ -40,21 +40,27 @@
         <img src="imgs/IMG_20210329_070138.jpg" alt="profile photo" class="home__avatar" />
         <h1 class="home__title">안녕하세요.</h1>
         <h2 class="home__description">소프트웨어 개발자를 희망하는 김태준이라고 합니다.</h2>
-        <button class="home_contact">Contact me</button>
+        <button class="home__contact">Contact me</button>
     </section>
     <!-- about -->
-    <section id="about">
+    <section id="about" class="section">
         <h1>About me</h1>
         <p>
-            소프트웨어 개발에 관심을 가지게 되어서 개발자로의 취업을 희망하게 되었습니다. 국비지원 학원의 도움을 받기도 하고 혼자 공부하면서 밑에서 열거한 프론트엔드와 백엔드 지식들을 배우게 되었습니다.
-            전공자는 아니고 어린 나이도 아니지만 저는 다른 누구보다 항상 배우는 것을 좋아하고 끈기있게 목표를 수행한다고 생각합니다.
+            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+            repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+            voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+            ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
         </p>
         <div class="about__majors">
             <div class="major">
                 <div class="major__icon">
                     <i class="fab fa-html5"></i>
                 </div>
-                <div class="major__title">Front_end</div>
+                <h2 class="major__title">Front_end</h2>
                 <div class="major__description">HTML, CSS, JavaScript, JQuery</div>
             </div>
 
@@ -62,7 +68,7 @@
                 <div class="major__icon">
                     <i class="fas fa-server"></i>
                 </div>
-                <div class="major__title">Back_end</div>
+                <h2 class="major__title">Back_end</h2>
                 <div class="major__description">JAVA, Spring, mybatis, JPA</div>
             </div>
 
@@ -70,7 +76,7 @@
                 <div class="major__icon">
                     <i class="fas fa-database"></i>
                 </div>
-                <div class="major__title">Database</div>
+                <h2 class="major__title">Database</h2>
                 <div class="major__description">MySql, Oracle, MariaDB</div>
             </div>
 
@@ -78,20 +84,24 @@
         </div>
 
         <div class="about__jobs">
-            <img src="imgs/sogang.png" alt="" class="job__logo" />
-            <p class="job__name">서강대학교 경제학과 졸업</p>
-            <p class="job__period">2018년</p>
-        </div>
+            <div class="job">
+                <img src="imgs/sogang.png" alt="" class="job__logo" />
+                <div class="job__description">
+                    <p class="job__name">서강대학교 경제학과 졸업</p>
+                    <p class="job__period">2018년</p>
+                </div>
+            </div>
 
-        <div class="about__jobs">
-            <img src="imgs/lang.png" alt="" class="job__logo" />
-            <p class="job__name">사용 가능한 언어: 영어, 독일어</p>
-            <p class="job__period">2019년 독일어 DSH3 취득</p>
+            <div class="job">
+                <img src="imgs/lang.png" alt="" class="job__logo" />
+                <p class="job__name">사용 가능한 언어: 영어, 독일어</p>
+                <p class="job__period">2019년 독일어 DSH3 취득</p>
+            </div>
         </div>
 
     </section>
     <!-- skills -->
-    <section id="skills">
+    <section id="skills" class="section">
         <h1>Skills</h1>
         <h2>Skill2 & Attributes</h2>
         <p>
@@ -182,7 +192,7 @@
         </div>
     </section>
     <!-- work -->
-    <section id="work">
+    <section id="work" class="section">
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
@@ -198,7 +208,7 @@
                 <div class="project__description">
                     <h3>Youtube Site</h3>
                     <span>My Homepage</span>
-                </div> 
+                </div>
             </a>
         </div>
 
@@ -208,7 +218,7 @@
                 <div class="project__description">
                     <h3>Youtube Site</h3>
                     <span>My Homepage</span>
-                </div> 
+                </div>
             </a>
         </div>
 
@@ -218,12 +228,12 @@
                 <div class="project__description">
                     <h3>Youtube Site</h3>
                     <span>My Homepage</span>
-                </div> 
+                </div>
             </a>
         </div>
     </section>
     <!-- testimonails -->
-    <section id="testimonials">
+    <section id="testimonials" class="section">
         <h1>자기 소개</h1>
         <h3>나의 특징에 대해서 설명한다.</h3>
         <div class="testimonials">
@@ -231,7 +241,13 @@
                 <img src="imgs/testimonial/IMG_20201024_163958.jpg" alt="People" class="testimonial__avatar" />
                 <!-- 나중에 제대로 된 사진(증명사진)으로 바꿔서 넣는다. -->
                 <div class="testimonial__speech-bubble">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.</p>
                     <p class="name"><a href="#">이름</a> /소속</p>
                 </div>
             </div>
@@ -242,7 +258,13 @@
                 <img src="imgs/testimonial/IMG_20201024_163958.jpg" alt="People" class="testimonial__avatar" />
                 <!-- 나중에 제대로 된 사진(증명사진)으로 바꿔서 넣는다. -->
                 <div class="testimonial__speech-bubble">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.</p>
                     <p class="name"><a href="#">이름</a> /소속</p>
                 </div>
             </div>
@@ -250,7 +272,7 @@
 
     </section>
     <!-- contact -->
-    <section id="contact">
+    <section id="contact" class="section">
         <h1 class="contact__title">저의 이메일입니다.</h1>
         <h2 class="contact__email">tjkimin2021@gmail.com</h2>
         <div class="contact__links">
