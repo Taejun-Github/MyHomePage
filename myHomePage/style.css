@@ -164,11 +164,14 @@ p {
 .section {
     padding: 50px;
     text-align: center;
+    margin: auto;
+    /* 섹션 사항들의 마진이 양옆에 동등하게 배분되도록 한다.*/
+}
+
+.section__container { 
     max-width: 1200px;
     /*섹션 부분의 최대 크기를 지정한다.*/
     margin: auto;
-    /* 섹션 사항들의 마진이 양옆에 동등하게 배분되도록 한다.*/
-    
 }
 
 /* About */
@@ -240,3 +243,55 @@ p {
     font-size: var(--font-micro);
 }
 
+
+/*skills*/
+
+#skills {
+    background-color: lightyellow;
+}
+
+.skillset {
+    display: flex;
+    background-color: lightgray;
+    color:wheat;
+    margin: 20px 0;
+}
+
+.skillset__title {
+    color:ivory;
+}
+
+.skillset__left {
+    flex-basis: 60%;
+    /*아이템별로 flex basis를 지정해줘야 크기를 늘어나게 할 수 있다.
+    아이템의 길이를 지정하는 속성이다.*/
+    background-color: darkgray;
+    padding: 20px 40px;
+}
+
+.skill__description {
+    display:flex;
+    justify-content: space-between;
+}
+.skill {
+    margin-bottom: 30px;
+}
+.skill__bar {
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+}
+
+.skillset__right {
+    flex-basis: 40%;
+    background-color: rgb(80, 77, 77);
+}
+
+.skill__value {
+    height: 3px;
+    background-color: orange;
+}
+
+.tools {
+    background-color: gray;
+}
