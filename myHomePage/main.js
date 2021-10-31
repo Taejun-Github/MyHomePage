@@ -67,6 +67,55 @@ document.addEventListener('scroll', ()=> {
 });
 
 
+//show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', ()=> {
+    if(window.scrollY > homeHeight /2) {
+        arrowUp.classList.add('visible');
+        //스크롤이 내려가면 arrowUp 아이콘에다가 visible 클래스를 추가한다. 그러면 css에서 정의한 
+        //것에 따라서 arrowUp 아이콘이 보이게 된다.
+    } else {
+        arrowUp.classList.remove('visible');
+        //클래스를 제거한다.
+    }
+});
+
+// Handle click on the "arrow up" button
+arrowUp.addEventListener('click', ()=> {
+    scrollIntoView('#home');
+});
+
+
+//Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project'); //프로젝트들이 할당된 배열이 만들어진다.
+workBtnContainer.addEventListener('click', (e)=> {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    //이벤트 안에 있는 데이터 안의 필터들을 받아온다. html 안에서 data-filter라고 정의했다.
+    //만약 숫자를 클릭하면 html에서 숫자는 span 태그 안에 있기 때문에 제대로 불러오지 못한다. 
+    //그래서 그 경우를 고려하여 따로 정의해주어야 한다. e.target.parentNode.dataset.filter;
+    console.log(filter); //이 경우에는 front-end, *, back-end 이렇게 세개로 나온다
+    if(filter == null) {
+        return;
+    }
+    projectContainer.classList.add('anim-out');
+    setTimeout(() => {  
+        projects.forEach((project) => {
+            console.log(project.dataset.type);
+            if(filter === '*' || filter === project.dataset.type) {
+                project.classList.remove('invisible');
+                //필터와 이름이 일치하거나 모두 보여주는 경우에는 클래스 리스트에서 invisible 제거
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        //opacity가 다시 1로 돌아올 수 있도록 하기 위해서
+        projectContainer.classList.remove('anim-out');
+    }, 500);  
+});
+
+
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: 'smooth'});

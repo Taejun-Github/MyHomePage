@@ -389,6 +389,13 @@ p {
     /*가로로 넘치면 밑으로 내려가도록 설정*/
     justify-content: center;
     /*요소들이 가운데로 정렬되도록 설정한다.*/
+    opacity: 1;
+    transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.5) translateY(40px);
 }
 
 .project {
@@ -405,6 +412,10 @@ p {
     margin: 2px;
     background-color: lightgray;
 
+}
+
+.project.invisible {
+    display:none;
 }
 
 .project__img {
@@ -531,6 +542,29 @@ p {
     transform: scale(1.1);
     color: var(--color-yellow);
 
+}
+
+/* Scroll */
+.arrow-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    background-color: greenyellow;
+    color: whitesmoke;
+    border-radius: 20%;
+    opacity: 0;
+    /*display:none으로 하지 않는 이유가 transition 이벤트를 주기 위한 것이다.*/
+    pointer-events: none;
+    /*이렇게 하면 포인터 클릭이 안되도록 할 수 있다*/
+    transition: all 300ms ease-in;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /*For below 768px screen width*/

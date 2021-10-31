@@ -212,14 +212,14 @@
             <h1>My work</h1>
             <h3>Projects</h3>
             <div class="work__categories">
-                <button class="category__btn">All<span class="category__count">3</span></button>
-                <button class="category__btn">Front-end<span class="category__count">1</span></button>
-                <button class="category__btn">Back-end<span class="category__count">2</span></button>
+                <button class="category__btn" data-filter="*">All<span class="category__count">3</span></button>
+                <button class="category__btn" data-filter="front-end">Front-end<span class="category__count">1</span></button>
+                <button class="category__btn" data-filter="back-end">Back-end<span class="category__count">2</span></button>
             </div>
 
 
             <div class="work__projects">
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
@@ -227,7 +227,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
@@ -235,70 +235,42 @@
                     </div>
                 </a>
 
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
                         <span>My Homepage</span>
                     </div>
                 </a>
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
                         <span>My Homepage</span>
                     </div>
                 </a>
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="back-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
                         <span>My Homepage</span>
                     </div>
                 </a>
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="back-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
                         <span>My Homepage</span>
                     </div>
                 </a>
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="back-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
                         <span>My Homepage</span>
                     </div>
                 </a>
-                <a href="#" class="project" target="blank">
-                    <img class="project__img" src="imgs/lang.png" alt="Project" />
-                    <div class="project__description">
-                        <h3>Youtube Site</h3>
-                        <span>My Homepage</span>
-                    </div>
-                </a>
-                <a href="#" class="project" target="blank">
-                    <img class="project__img" src="imgs/lang.png" alt="Project" />
-                    <div class="project__description">
-                        <h3>Youtube Site</h3>
-                        <span>My Homepage</span>
-                    </div>
-                </a>
-                <a href="#" class="project" target="blank">
-                    <img class="project__img" src="imgs/lang.png" alt="Project" />
-                    <div class="project__description">
-                        <h3>Youtube Site</h3>
-                        <span>My Homepage</span>
-                    </div>
-                </a>
-                <a href="#" class="project" target="blank">
-                    <img class="project__img" src="imgs/lang.png" alt="Project" />
-                    <div class="project__description">
-                        <h3>Youtube Site</h3>
-                        <span>My Homepage</span>
-                    </div>
-                </a>
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="back-end">
                     <img class="project__img" src="imgs/lang.png" alt="Project" />
                     <div class="project__description">
                         <h3>Youtube Site</h3>
@@ -373,6 +345,12 @@
         </div>
         <p class="contact__rights">2021 Taejun Kim -- 자기 소개를 위해서 만들었습니다.</p>
     </section>
+
+
+    <!-- Arrow up-->
+    <button class="arrow-up">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 
 </html>
