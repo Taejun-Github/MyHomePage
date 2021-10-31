@@ -7,9 +7,9 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 //쿼리셀렉터를 이용해서 가져온 navbar의 높이이다. 직접 브라우저 상에서 보여지는 높이가 된다.
 
 document.addEventListener('scroll', ()=> {
-    console.log(window.scrollY);
+    //console.log(window.scrollY);
     //원점으로부터 문서를 수직방향으로 스크롤한 픽셀의 수
-    console.log(`navbarHeight: ${navbarHeight}`);
+   // console.log(`navbarHeight: ${navbarHeight}`);
     if(window.scrollY > navbarHeight) { //스크롤을 navbarHeight보다 더 내렸을 때
         navbar.classList.add('navbar--dark'); //navbar에 클래스를 추가한다.
     } else {
@@ -34,14 +34,29 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
-    console.log(event.target.dataset.link);
+    //console.log(event.target.dataset.link);
     //이렇게 하면 data link의 값을 특정해서 가져올 수 있다. null이 아닐때만 콘솔에 출력한다.
     //link가 null인 것을 클릭해서 undefined가 출력되는 것을 이렇게 방지할 수 있다.
 
-    const scrollTo = document.querySelector(link);
-    console.log(scrollTo);
+    //const scrollTo = document.querySelector(link);
+    //console.log(scrollTo);
     //왜 scrollTo가 null이 나오는지 알 수가 없다. -> html 태그에서 잘못 설정했기 때문이다.
     //예를 들어서 data-link="#home" 이렇게 설정해줬으면 실제로 존재하는 태그 아이디가 있어야 한다.
     //반드시 이름을 일치시켜 줘야 하는 것에 유의한다.
-    scrollTo.scrollIntoView({behavior: 'smooth'});
+    //scrollTo.scrollIntoView({behavior: 'smooth'}); 공통함수로 처리하는 것으로 바꿈
+
+    scrollIntoView(link);
 });
+
+
+// Handle click on "contact me" button on home
+const HomeContact = document.querySelector('.home__contact');
+HomeContact.addEventListener('click', (event) => {
+    scrollIntoView("#contact");
+
+});
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+}
