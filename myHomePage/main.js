@@ -18,6 +18,8 @@ document.addEventListener('scroll', ()=> {
 });
 
 
+
+
 // Handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu'); //css에서 쓰이는 셀렉터를 반드시 동일하게 해야 한다.
@@ -34,6 +36,8 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
+
+    navbarMenu.classList.add('close');
     //console.log(event.target.dataset.link);
     //이렇게 하면 data link의 값을 특정해서 가져올 수 있다. null이 아닐때만 콘솔에 출력한다.
     //link가 null인 것을 클릭해서 undefined가 출력되는 것을 이렇게 방지할 수 있다.
@@ -48,6 +52,13 @@ navbarMenu.addEventListener('click', (event) => {
     scrollIntoView(link);
 });
 
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=> {
+    navbarMenu.classList.toggle('close');
+    // toggle은 클래스의 유무를 체크해서 없으면 add, 있으면 remove를 자동으로 수행한다.
+});
+
 
 // Handle click on "contact me" button on home
 const HomeContact = document.querySelector('.home__contact');
@@ -60,7 +71,7 @@ HomeContact.addEventListener('click', (event) => {
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', ()=> {
-    console.log(1 - window.scrollY / homeHeight);
+    //console.log(1 - window.scrollY / homeHeight);
     //scrollY가 homeHeight까지 내려가면 최종적으로 1이 되어서 console.log에 찍히는 값은 0이 된다.
     home.style.opacity = 1 - window.scrollY / homeHeight;
     //opacity가 - 가 되는 것은 완전 불투명이다.
@@ -99,6 +110,17 @@ workBtnContainer.addEventListener('click', (e)=> {
     if(filter == null) {
         return;
     }
+
+    // Remove selection from the previous item and select the new one
+    const active = document.querySelector('.category__btn.selected');
+    console.log(active);
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    //버튼과 span을 구분해주기 위해서
+
+    target.classList.add('selected');
+
+
     projectContainer.classList.add('anim-out');
     setTimeout(() => {  
         projects.forEach((project) => {

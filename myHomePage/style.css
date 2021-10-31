@@ -129,13 +129,12 @@ p {
     margin: 0 4px; /*이렇게 하면 간격을 줄 수 있다.*/
     cursor: pointer; /*마우스를 올리면 손가락 모양으로 바뀐다.*/
     border-radius: var(--size-border-radius);
+    border: 1px solid transparent;
 }
 
-.navbar__menu__item.active {
-    border: 1px solid var(--color-white);
-}
 
 .navbar__menu__item:hover {
+    border-color: var(--color-white);
     background-color: var(--color-aqua);
 }
 
@@ -333,7 +332,7 @@ p {
     padding: 8px 48px;
 }
 
-.category__btn.active, .category__btn:hover {
+.category__btn.selected, .category__btn:hover {
     background-color: aquamarine;
     color: white;
 }
@@ -576,13 +575,17 @@ p {
         flex-direction: column;
         /*이렇게 하면 가로가 아닌 세로로 보여준다.*/
         align-items: flex-start; /*이 부분 설명은 인터넷 참조*/
-
+        background-color: aqua;
     }
 
     .navbar__menu {
         flex-direction: column;
         text-align: center;
         width:100%;
+        display: block;
+    }
+
+    .navbar__menu.close {
         display: none;
     }
 
