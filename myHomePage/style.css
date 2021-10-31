@@ -97,13 +97,22 @@ p {
 
 /* Navbar */
 #navbar {
+    position:fixed;
+    width: 100%;
     display: flex; /*수평으로 늘어서게 하기*/
     justify-content: space-between; /*요소가 양끝으로 간다.*/
-    background-color: var(--color-blue);
+    background-color: transparent;
     align-items: center; /*수직으로 가운데 정렬. 클래스가 flex여야만 쓸 수 있다.*/
     color: var(--color-white);
     padding: 16px;
+    transition: all var(--animation-duration) ease-in-out;
 }
+
+#navbar.navbar--dark {
+    background-color: aqua;
+    padding:8px;
+}
+
 
 .navbar__menu {
     display:flex; /*이렇게 하면 수평으로 늘어선 모양이 된다.*/
@@ -146,6 +155,7 @@ p {
 #home {
     background: url(imgs/water-gea0da4b9b_1920.jpg) center/cover no-repeat;
     padding: 40px;
+    padding-top: 120px;
     text-align: center;
     /*이렇게 하면 이미지와 글자 모두를 가운데 정렬할 수 있다.*/
 }
