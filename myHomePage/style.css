@@ -1,364 +1,363 @@
 /* Global */
 :root {
-    /* Color */
-    --color-white: #ffffff;
-    --color-light-white: #eeeeee;
-    --color-dark-pink: #e91710;
-    --color-black: #000000;
-    --color-dark-grey: #363434;
-    --color-grey: #616161;
-    --color-blue:#0bb8ec;
-    --color-yellow: #feb546;
-    --color-orange: #feb546;
-    --color-aqua: rgb(11, 158, 158);
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-pink: #e91710;
+  --color-black: #000000;
+  --color-dark-grey: #363434;
+  --color-grey: #616161;
+  --color-blue: #0bb8ec;
+  --color-yellow: #feb546;
+  --color-orange: #feb546;
+  --color-aqua: rgb(11, 158, 158);
 
-    /* Font size */
-    --font-large: 48px;
-    --font-medium: 28px;
-    --font-regular: 18px;
-    --font-small: 16px;
-    --font-micro: 14px;
+  /* Font size */
 
-    /* Font weight */
-    --weight-bold: 700;
-    --weight-semi-bold: 600;
-    --weight-regular: 400;
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
 
-    /* Size */
-    --size-border-radius: 4px;
+  /* Size */
+  --size-border-radius: 4px;
 
-    /* Animation duration*/
-    --animation-duration: 800ms;
+  /* Animation duration*/
+  --animation-duration: 800ms;
 }
 
 /* Universal tags */
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    cursor: default;
-    /*텍스트에 마우스 호버에도 마우스 모양이 변하지 않음*/
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  cursor: default;
+  /*텍스트에 마우스 호버에도 마우스 모양이 변하지 않음*/
 }
 
 a {
-    text-decoration: none;
-    color: var(--color-white);
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 ul {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 li {
-    list-style:none;
+  list-style: none;
 }
 
 button {
-    background-color: transparent;
-    /*투명하게*/
-    cursor:pointer;
-    border: none;
-    outline:none;
+  background-color: transparent;
+  /*투명하게*/
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* Typhgraphy */
 
 h1 {
-    font-size: var(--font-large);
-    font-weight: var(--weight-bold);
-    color: var(--color-black);
-    margin: 16px 0px;
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
 }
 
 h2 {
-    font-size: var(--font-medium);
-    font-weight: var(--weight-semi-bold);
-    color: var(--color-black);
-    margin: 8px 0;
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
 }
 
 h3 {
-    font-size: var(--font-regular);
-    font-weight: var(--font-regular);
-    color:var(--color-black);
-    margin: 8px 0;
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 8px 0;
 }
 
 p {
-    font-size: var(--font-regular);
-    font-weight: var(--font-regular);
-    color:var(--color-black);
-    margin: 4px 0;
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 4px 0;
 }
 
 /* Navbar */
 #navbar {
-    position:fixed;
-    width: 100%;
-    display: flex; /*수평으로 늘어서게 하기*/
-    justify-content: space-between; /*요소가 양끝으로 간다.*/
-    background-color: transparent;
-    align-items: center; /*수직으로 가운데 정렬. 클래스가 flex여야만 쓸 수 있다.*/
-    color: var(--color-white);
-    padding: 16px;
-    transition: all var(--animation-duration) ease-in-out;
-    z-index: 1;
+  position: fixed;
+  width: 100%;
+  display: flex; /*수평으로 늘어서게 하기*/
+  justify-content: space-between; /*요소가 양끝으로 간다.*/
+  background-color: transparent;
+  align-items: center; /*수직으로 가운데 정렬. 클래스가 flex여야만 쓸 수 있다.*/
+  color: var(--color-white);
+  padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 
 #navbar.navbar--dark {
-    background-color: aqua;
-    padding:8px;
+  background-color: aqua;
+  padding: 8px;
 }
 
-
 .navbar__menu {
-    display:flex; /*이렇게 하면 수평으로 늘어선 모양이 된다.*/
+  display: flex; /*이렇게 하면 수평으로 늘어선 모양이 된다.*/
 }
 
 .navbar__logo {
-    font-size: var(--font-medium);
-    font-weight: var(--weight-semi-bold);
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
 }
 
 .navbar__menu__item {
-    padding: 8px 12px;
-    margin: 0 4px; /*이렇게 하면 간격을 줄 수 있다.*/
-    cursor: pointer; /*마우스를 올리면 손가락 모양으로 바뀐다.*/
-    border-radius: var(--size-border-radius);
-    border: 1px solid transparent;
+  padding: 8px 12px;
+  margin: 0 4px; /*이렇게 하면 간격을 줄 수 있다.*/
+  cursor: pointer; /*마우스를 올리면 손가락 모양으로 바뀐다.*/
+  border-radius: var(--size-border-radius);
+  border: 1px solid transparent;
 }
 
-
 .navbar__menu__item:hover {
-    border-color: var(--color-white);
-    background-color: var(--color-aqua);
+  border-color: var(--color-white);
+  background-color: var(--color-aqua);
 }
 
 .navbar__toggle-btn {
-    /*반응형으로 화면이 작을때만 보이는 토글버튼은 여기에서 일관성 있게 스타일링 해주는 것이 좋다.
+  /*반응형으로 화면이 작을때만 보이는 토글버튼은 여기에서 일관성 있게 스타일링 해주는 것이 좋다.
       밑의 @media screen 부분에서는 숨김 여부만 처리하는 것이 더 나은 방법이다.
     */
-    position: absolute; /*이렇게 하면 기존 자리를 지키던 것에서 빠져나와서 절대 기준으로 간다.*/
-    right: 32px;
-    top: 24px;
-    font-size:24px;
-    color:white;
-    display:none;
-    /*opacity를 사용하는 방법은 좋지 않다. 왜냐하면 투명도만 조절시 마우스 클릭이 되므로.*/
+  position: absolute; /*이렇게 하면 기존 자리를 지키던 것에서 빠져나와서 절대 기준으로 간다.*/
+  right: 32px;
+  top: 24px;
+  font-size: 24px;
+  color: white;
+  display: none;
+  /*opacity를 사용하는 방법은 좋지 않다. 왜냐하면 투명도만 조절시 마우스 클릭이 되므로.*/
 }
 
 /* Home */
 #home {
-    background: url(imgs/water-gea0da4b9b_1920.jpg) center/cover no-repeat;
-    padding: 40px;
-    padding-top: 120px;
-    text-align: center;
-    /*이렇게 하면 이미지와 글자 모두를 가운데 정렬할 수 있다.*/
+  background: url(imgs/water-gea0da4b9b_1920.jpg) center/cover no-repeat;
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
+  /*이렇게 하면 이미지와 글자 모두를 가운데 정렬할 수 있다.*/
 }
 
 .home__avatar {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 2px solid var(--color-light-white);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
 }
 
 .home__title,
 .home__description {
-    color: purple;
+  color: purple;
 }
 
 .home__contact {
-    color: var(--color-orange);
-    font-size: var(--font-regular);
-    font-weight: var(--weight-bold);
-    margin:24px;
-    padding: 8px 12px;
-    border: 2px solid var(--color-orange);
-    border-radius: var(--size-border-radius);
+  color: var(--color-orange);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-orange);
+  border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  background-color: darkblue;
 }
 
 /* Section common*/
 
 .section {
-    padding: 50px;
-    text-align: center;
-    margin: auto;
-    /* 섹션 사항들의 마진이 양옆에 동등하게 배분되도록 한다.*/
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+  /* 섹션 사항들의 마진이 양옆에 동등하게 배분되도록 한다.*/
 }
 
-.section__container { 
-    max-width: 1200px;
-    /*섹션 부분의 최대 크기를 지정한다.*/
-    margin: auto;
+.section__container {
+  max-width: 1200px;
+  /*섹션 부분의 최대 크기를 지정한다.*/
+  margin: auto;
 }
 
 /* About */
 
 .about__majors {
-    display:flex;
-    justify-content: space-between;
-    margin: 80px 0;
-    
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
 }
 
 .major__icon {
-    width: 170px;
-    height: 170px;
-    font-size: 70px;
-    /*아이콘도 이렇게 폰트사이즈로 변경이 됨. 이미지가 아니기 때문이다.*/
-    line-height: 170px;
-    /*이렇게 height만큼 line-height를 지정하면 높이가 중간이 된다.*/
-    /*왜? line-height는 글자를 포함한 한 줄의 높이를 지정하는 것이므로.*/
-    margin:auto;
-    color:lightblue;
-    border: 1px solid var(--color-blue);
-    border-radius: 50%;
-    margin-bottom: 16px;
+  width: 170px;
+  height: 170px;
+  font-size: 70px;
+  /*아이콘도 이렇게 폰트사이즈로 변경이 됨. 이미지가 아니기 때문이다.*/
+  line-height: 170px;
+  /*이렇게 height만큼 line-height를 지정하면 높이가 중간이 된다.*/
+  /*왜? line-height는 글자를 포함한 한 줄의 높이를 지정하는 것이므로.*/
+  margin: auto;
+  color: lightblue;
+  border: 1px solid var(--color-blue);
+  border-radius: 50%;
+  margin-bottom: 16px;
 }
 
 .major__icon i {
-    transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration) ease;
 }
 
-.major__icon:hover i{
-    color:var(--color-orange);
-    transform: rotate(-30deg) scale(1.1);
+.major__icon:hover i {
+  color: var(--color-orange);
+  transform: rotate(-30deg) scale(1.1);
 }
-.major__title, .major__description {
-    color: var(--color-dark-grey);
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
 }
 
 .major__description {
-    font-size: var(--font-small);
+  font-size: var(--font-small);
 }
 
 .job {
-    display: flex;
-    align-items: center;
-    /*이렇게 해서 글자를 가운데로 정렬한다.*/
+  display: flex;
+  align-items: center;
+  /*이렇게 해서 글자를 가운데로 정렬한다.*/
 }
 
 .job__description {
-    margin: 0 16px;
-    text-align: left;
+  margin: 0 16px;
+  text-align: left;
 }
 
 .job img {
-    width: 100px;
-    height: 100px;
-    /*내 임의대로 넣은 것. 강의에는 없다.*/
+  width: 100px;
+  height: 100px;
+  /*내 임의대로 넣은 것. 강의에는 없다.*/
 }
 
-.job__name, .job__period {
-    color:black;
+.job__name,
+.job__period {
+  color: black;
 }
 
 .job__name {
-    font-size: var(--font-small);
+  font-size: var(--font-small);
 }
 
 .job__period {
-    font-size: var(--font-micro);
+  font-size: var(--font-micro);
 }
-
 
 /*skills*/
 
 #skills {
-    background-color: lightyellow;
+  background-color: lightyellow;
 }
 
 .skillset {
-    display: flex;
-    background-color: lightgray;
-    color:wheat;
-    margin: 20px 0;
+  display: flex;
+  background-color: lightgray;
+  color: wheat;
+  margin: 20px 0;
 }
 
 .skillset__title {
-    color:ivory;
+  color: ivory;
 }
 
 .skillset__left {
-    flex-basis: 60%;
-    /*아이템별로 flex basis를 지정해줘야 크기를 늘어나게 할 수 있다.
+  flex-basis: 60%;
+  /*아이템별로 flex basis를 지정해줘야 크기를 늘어나게 할 수 있다.
     아이템의 길이를 지정하는 속성이다.*/
-    background-color: darkgray;
-    padding: 20px 40px;
+  background-color: darkgray;
+  padding: 20px 40px;
 }
 
 .skill__description {
-    display:flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .skill {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .skill__bar {
-    width: 100%;
-    height: 3px;
-    background-color: yellow;
+  width: 100%;
+  height: 3px;
+  background-color: yellow;
 }
 
 .skillset__right {
-    flex-basis: 40%;
-    background-color: rgb(80, 77, 77);
+  flex-basis: 40%;
+  background-color: rgb(80, 77, 77);
 }
 
 .skill__value {
-    height: 3px;
-    background-color: orange;
+  height: 3px;
+  background-color: orange;
 }
 
 .tools {
-    background-color: gray;
+  background-color: gray;
 }
 
 /* Work */
 
 .work__categories {
-    margin: 40px;
+  margin: 40px;
 }
 
 .category__btn {
-    border: 1px solid rgb(80, 80, 60);
-    border-radius: var(--size-border-radius);
-    font-size:var(--font-regular);
-    padding: 8px 48px;
+  border: 1px solid rgb(80, 80, 60);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+  position: relative;
 }
 
-.category__btn.selected, .category__btn:hover {
-    background-color: aquamarine;
-    color: white;
+.category__btn.selected,
+.category__btn:hover {
+  background-color: aquamarine;
+  color: white;
 }
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
-    opacity: 1;
-    top: 0;
-    /*호버되거나 활성화될 때만 보이게 하고 위치를 top 0으로 한다.*/
+  opacity: 1;
+  top: 0;
+  /*호버되거나 활성화될 때만 보이게 하고 위치를 top 0으로 한다.*/
 }
 .category__count {
-    background-color: orange;
-    border-radius: 50%;
-    color:var(--color-white);
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    line-height: 24px;
-    position: relative;
-    left: 15px;
-    top: -20px;
-    opacity: 0; /*평소에는 보이지 않게 함*/
-    transition: all var(--animation-duration);
+  background-color: orange;
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  line-height: 24px;
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  opacity: 0; /*평소에는 보이지 않게 함*/
+  transition: all var(--animation-duration);
 
-    /*이렇게 해야 원형이 된다. 그렇지 않으면 span이기 때문에 납작한 타원이 된다.*/
-    /*sapn은 컨텐트만 감싸는 사이즈로 정해지기 때문에 여백이 없다.*/
-    /*
+  /*이렇게 해야 원형이 된다. 그렇지 않으면 span이기 때문에 납작한 타원이 된다.*/
+  /*sapn은 컨텐트만 감싸는 사이즈로 정해지기 때문에 여백이 없다.*/
+  /*
     display: inline ?
     대표적인 태그로는 span을 예로 들 수 있는데, text 크기만큼만 공간을 점유하고 줄바꿈을 하지 않는다.
 
@@ -383,230 +382,263 @@ p {
 }
 
 .work__projects {
-    display:flex;
-    flex-wrap: wrap;
-    /*가로로 넘치면 밑으로 내려가도록 설정*/
-    justify-content: center;
-    /*요소들이 가운데로 정렬되도록 설정한다.*/
-    opacity: 1;
-    transition: all var(--animation-duration) ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  /*가로로 넘치면 밑으로 내려가도록 설정*/
+  justify-content: center;
+  /*요소들이 가운데로 정렬되도록 설정한다.*/
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
 }
 
 .work__projects.anim-out {
-    opacity: 0;
-    transform: scale(0.5) translateY(40px);
+  opacity: 0;
+  transform: scale(0.5) translateY(40px);
 }
 
 .project {
-    position:relative;
-    /*따라서 static을 쓰지 않도록 여기에 relative를 잡아주면
+  position: relative;
+  /*따라서 static을 쓰지 않도록 여기에 relative를 잡아주면
     여기에서 project__description이 absolute의 포지션을 결정한다.*/
-    display:flex;
-    justify-content: center;
-    /*가운데로 맞추기*/
-    align-items: center;
-    /*높이를 중앙으로 맞추기*/
-    width: 280px;
-    height: 250px;
-    margin: 2px;
-    background-color: lightgray;
-
+  display: flex;
+  justify-content: center;
+  /*가운데로 맞추기*/
+  align-items: center;
+  /*높이를 중앙으로 맞추기*/
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: lightgray;
 }
 
 .project.invisible {
-    display:none;
+  display: none;
 }
 
 .project__img {
-    max-width: 100%;
-    max-height: 100%;
-    /*content 크기를 넘어가지 못하도록 설정한다.*/
-
+  max-width: 100%;
+  max-height: 100%;
+  /*content 크기를 넘어가지 못하도록 설정한다.*/
 }
 
 .project__description {
-    position:absolute;
-    /*position static을 쓰지 않는 가장 가까운 부모태그를 찾아간다.*/
-    top:0;
-    left:0;
-    background-color: black;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    /*이렇게 하면 flex가 세로 순서로 나온다.*/
-    justify-content: center;
-    /*이렇게 해서 중간으로 정렬한다.*/
-    opacity: 0;
-    transform: translateY(10px);
-    /*hover시 올라오는 효과를 주기 위해서*/
-    transition: all var(--animation-duration);
+  position: absolute;
+  /*position static을 쓰지 않는 가장 가까운 부모태그를 찾아간다.*/
+  top: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  /*이렇게 하면 flex가 세로 순서로 나온다.*/
+  justify-content: center;
+  /*이렇게 해서 중간으로 정렬한다.*/
+  opacity: 0;
+  transform: translateY(10px);
+  /*hover시 올라오는 효과를 주기 위해서*/
+  transition: all var(--animation-duration);
 }
 
 .project__description h3 {
-    color:var(--color-white);
+  color: var(--color-white);
 }
 
-.project:hover .project__description{
-    opacity: 0.8;
-    transform: translateY(0px);
+.project:hover .project__description {
+  opacity: 0.8;
+  transform: translateY(0px);
 }
 /*project hover시 project__description의 opacity를 변화시킨다.*/
 
 .project__description h3:after {
-    content: '';
-    display:block;
-    position: relative;
-    left: 50%;
-    width: 25px;
-    height: 2px;
-    margin-left: -12px;
-    margin-top: 8px;
-    /*중간에서 조금 당겨오기*/
-    background-color: ivory;
-
+  content: "";
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  margin-left: -12px;
+  margin-top: 8px;
+  /*중간에서 조금 당겨오기*/
+  background-color: ivory;
 }
 
 /*Testimonial*/
 #testimonials {
-    background-color: var(--color-light-white);
+  background-color: var(--color-light-white);
 }
 
 .testimonials {
-    margin: 40px;
+  margin: 40px;
 }
 
 .testimonial {
-    display: flex;
-    margin: 32px 0;
+  display: flex;
+  margin: 32px 0;
 }
 
 .testimonial__avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin:12px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 12px;
 }
 
 .testimonial__avatar:nth-child(odd) {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .testimonial__avatar:nth-child(even) {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .testimonial__speech-bubble {
-    background-color: white;
-    padding: 18px;
-    border-radius: var(--size-border-radius);
+  background-color: white;
+  padding: 18px;
+  border-radius: var(--size-border-radius);
 }
 
 .testimonial__speech-bubble p {
-    color: var(--color-grey);
+  color: var(--color-grey);
 }
 
 .testimonial__speech-bubble a {
-    color: var(--color-orange);
+  color: var(--color-orange);
 }
 
 /*Contact*/
 
 #contact {
-    background-color: var(--color-blue);
+  background-color: var(--color-blue);
 }
 
 .contact__title,
 .contact__email,
 .contact__rights {
-    color:var(--color-white);
+  color: var(--color-white);
 }
 
 .contact__title {
-    margin: 32px 0;
+  margin: 32px 0;
 }
 
-
 .contact__links {
-    font-size: var(--font-large);
-    margin: 24px 0;
-
+  font-size: var(--font-large);
+  margin: 24px 0;
 }
 
 .contact__links i {
-    transition: all var(--animation-duration) ease-in;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .contact__links i:hover {
-    transform: scale(1.1);
-    color: var(--color-yellow);
-
+  transform: scale(1.1);
+  color: var(--color-yellow);
 }
 
 /* Scroll */
 .arrow-up {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 70px;
-    height: 70px;
-    font-size: 50px;
-    background-color: greenyellow;
-    color: whitesmoke;
-    border-radius: 20%;
-    opacity: 0;
-    /*display:none으로 하지 않는 이유가 transition 이벤트를 주기 위한 것이다.*/
-    pointer-events: none;
-    /*이렇게 하면 포인터 클릭이 안되도록 할 수 있다*/
-    transition: all 300ms ease-in;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: greenyellow;
+  color: whitesmoke;
+  border-radius: 20%;
+  opacity: 0;
+  /*display:none으로 하지 않는 이유가 transition 이벤트를 주기 위한 것이다.*/
+  pointer-events: none;
+  /*이렇게 하면 포인터 클릭이 안되도록 할 수 있다*/
+  transition: all 300ms ease-in;
 }
 
 .arrow-up.visible {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*For below 768px screen width*/
 @media screen and (max-width: 768px) {
-    .navbar__toggle-btn {
-        display:block;
-    }
-    #navbar {
-        flex-direction: column;
-        /*이렇게 하면 가로가 아닌 세로로 보여준다.*/
-        align-items: flex-start; /*이 부분 설명은 인터넷 참조*/
-        background-color: aqua;
-    }
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
 
-    .navbar__menu {
-        flex-direction: column;
-        text-align: center;
-        width:100%;
-        display: block;
-    }
+  .navbar__toggle-btn {
+    display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
+  }
+  #navbar {
+    flex-direction: column;
+    /*이렇게 하면 가로가 아닌 세로로 보여준다.*/
+    align-items: flex-start; /*이 부분 설명은 인터넷 참조*/
+    background-color: aqua;
+  }
 
-    .navbar__menu.close {
-        display: none;
-    }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
 
-    .about__majors {
-        flex-direction: column;
-    }
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
 
-    .major {
-        margin-bottom: 38px;
-    }
+  .navbar__menu.close {
+    display: none;
+  }
 
-    .skillset {
-        flex-direction: column;
-    }
+  .about__majors {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 
-    .project {
-        flex-grow: 1;
-    }
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+  .major {
+    margin-bottom: 30px;
+  }
 
-    .testimonial__avatar {
-        width: 80px;
-        height: 80px;
-    }
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial__avatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 8px;
+    margin: 0;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
 }
